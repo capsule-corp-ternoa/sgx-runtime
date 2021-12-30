@@ -1,17 +1,17 @@
 /*
-    Copyright 2021 Integritee AG and Supercomputing Systems AG
+	Copyright 2021 Integritee AG and Supercomputing Systems AG
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
 
-        http://www.apache.org/licenses/LICENSE-2.0
+		http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
 */
 
 //! The Substrate Node Template runtime for SGX.
@@ -270,6 +270,20 @@ impl pallet_parentchain::Config for Runtime {
 	type WeightInfo = ();
 }
 
+parameter_types! {
+	pub const MaxStringLength: u16 = 1000;
+	pub const MinStringLength: u16 = 1;
+}
+
+impl pallet_nfts::Config for Runtime {
+	type Event = Event;
+	type WeightInfo = ();
+	type Currency = Balances;
+	type FeesCollector = ();
+	type MaxStringLength = MaxStringLength;
+	type MinStringLength = MinStringLength;
+}
+
 construct_runtime!(
 	pub enum Runtime where
 		Block = Block,
@@ -282,6 +296,7 @@ construct_runtime!(
 		TransactionPayment: pallet_transaction_payment::{Pallet, Storage},
 		Sudo: pallet_sudo::{Pallet, Call, Config<T>, Storage, Event<T>},
 		Parentchain: pallet_parentchain::{Pallet, Call, Storage},
+		Nfts: pallet_nfts::{Pallet, Call, Storage, Event<T>, Config<T>},
 	}
 );
 
