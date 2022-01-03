@@ -284,6 +284,7 @@ construct_runtime!(
 		TransactionPayment: pallet_transaction_payment::{Pallet, Storage},
 		Sudo: pallet_sudo::{Pallet, Call, Config<T>, Storage, Event<T>},
 		Parentchain: pallet_parentchain::{Pallet, Call, Storage},
+		Nfts: ternoa_nfts,
 	}
 );
 
@@ -301,4 +302,18 @@ impl_runtime_apis! {
 			Executive::initialize_block(header)
 		}
 	}
+}
+
+parameter_types! {
+	pub const MinIpfsLen: u16 = 1;
+	pub const MaxIpfsLen: u16 = 256;
+}
+
+impl ternoa_nfts::Config for Runtime {
+	type Event = Event;
+	type WeightInfo = ();
+	type Currency = Balances;
+	type FeesCollector = ();
+	type MinIpfsLen = MinIpfsLen;
+	type MaxIpfsLen = MaxIpfsLen;
 }
