@@ -14,8 +14,12 @@ targets = ['x86_64-unknown-linux-gnu']
 hex-literal = { optional = true, version = '0.3.1' }
 serde = { features = ['derive'], optional = true, version = '1.0.132' }
 # alias "parity-scale-code" to "codec"
-codec = { package = 'parity-scale-codec', version = "2.0.0", default-features = false,  features = ['derive']}
-scale-info = { version = "1.0", default-features = false, features = ["derive"] }
+codec = { package = 'parity-scale-codec', version = "2.0.0", default-features = false, features = [
+    'derive',
+] }
+scale-info = { version = "1.0", default-features = false, features = [
+    "derive",
+] }
 
 # Substrate dependencies
 frame-benchmarking = { version = "4.0.0-dev", default-features = false, optional = true, git = "https://github.com/paritytech/substrate.git", branch = "master" }
@@ -28,9 +32,9 @@ pallet-aura = { version = "4.0.0-dev", default-features = false, git = "https://
 pallet-balances = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
 pallet-grandpa = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
 pallet-randomness-collective-flip = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
-pallet-sudo = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git",branch = "master" }
-pallet-timestamp = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git",branch = "master" }
-pallet-transaction-payment = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git",branch = "master" }
+pallet-sudo = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
+pallet-timestamp = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
+pallet-transaction-payment = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
 pallet-transaction-payment-rpc-runtime-api = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
 sp-api = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
 sp-block-builder = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
@@ -45,7 +49,7 @@ sp-transaction-pool = { version = "4.0.0-dev", default-features = false, git = "
 sp-version = { version = "4.0.0-dev", default-features = false, git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 # Ternoa
-ternoa-nfts = { package = "ternoa-nfts", default-features = false, git = "https://github.com/capsule-corp-ternoa/chain", tag = "SGX-0.0.1" }
+ternoa-nfts = { package = "ternoa-nfts", default-features = false, git = "https://github.com/capsule-corp-ternoa/chain", tag = "SGX-0.0.2" }
 
 # Integritee dependencies
 pallet-parentchain = { default-features = false, git = "https://github.com/integritee-network/pallets.git", branch = "master" }

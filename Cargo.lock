@@ -2796,7 +2796,7 @@ checksum = "55937e1799185b12863d447f42597ed69d9928686b8d88a1df17376a097d8369"
 [[package]]
 name = "ternoa-common"
 version = "0.2.0"
-source = "git+https://github.com/capsule-corp-ternoa/chain?tag=SGX-0.0.1#3991509fc8a147fed719c3a6542af312f9d21419"
+source = "git+https://github.com/capsule-corp-ternoa/chain?tag=SGX-0.0.2#2e8f43aad9cfeb8ddb6ba8eb9ecf813c3dd38378"
 dependencies = [
  "frame-support",
  "sp-runtime",
@@ -2807,7 +2807,7 @@ dependencies = [
 [[package]]
 name = "ternoa-nfts"
 version = "0.3.0"
-source = "git+https://github.com/capsule-corp-ternoa/chain?tag=SGX-0.0.1#3991509fc8a147fed719c3a6542af312f9d21419"
+source = "git+https://github.com/capsule-corp-ternoa/chain?tag=SGX-0.0.2#2e8f43aad9cfeb8ddb6ba8eb9ecf813c3dd38378"
 dependencies = [
  "frame-benchmarking",
  "frame-support",
@@ -2825,7 +2825,7 @@ dependencies = [
 [[package]]
 name = "ternoa-primitives"
 version = "0.2.0"
-source = "git+https://github.com/capsule-corp-ternoa/chain?tag=SGX-0.0.1#3991509fc8a147fed719c3a6542af312f9d21419"
+source = "git+https://github.com/capsule-corp-ternoa/chain?tag=SGX-0.0.2#2e8f43aad9cfeb8ddb6ba8eb9ecf813c3dd38378"
 dependencies = [
  "frame-system",
  "parity-scale-codec",
